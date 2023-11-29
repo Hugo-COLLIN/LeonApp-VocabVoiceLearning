@@ -18,9 +18,10 @@ window.onload = function() {
 };
 
 function showPage(url) {
-  console.log(url);
+  const page = document.querySelector('#' + url);
+  if (!page) return;
   document.querySelectorAll('div').forEach(function(page) {
     page.style.display = 'none';
   });
-  document.querySelector('#' + url).style.display = 'block';
+  page.style.display = 'block';
 }
