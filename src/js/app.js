@@ -1,4 +1,9 @@
 window.onload = function() {
+  // Redirect to the specified internal page
+  const initialUrl = window.location.href.split('#')[1];
+  if (initialUrl)
+    showPage(initialUrl);
+
   document.querySelectorAll('a').forEach(function(link) {
     // console.log(link.hash.split("#")[1])
     if (link.host !== window.location.host || !link.hash.split("#")[1])
