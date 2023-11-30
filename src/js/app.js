@@ -1,21 +1,47 @@
 window.onload = function() {
+  // Redirect to the specified internal page
+  const urlHash = window.location.href.split('#')[1];
+
+  const initialUrl =
+    urlHash && checkAppPageExists(urlHash)
+      ? urlHash
+      : 'series';
+
+  showAppPage(initialUrl);
+
+  // Listen for hash changes
   document.querySelectorAll('a').forEach(function(link) {
-    // console.log(link.hash.split("#")[1])
+    // Only listen for internal links
     if (link.host !== window.location.host || !link.hash.split("#")[1])
       return;
 
+    // Listen for clicks on the links
     link.addEventListener('click', function(event) {
       event.preventDefault();
       history.pushState(null, null, this.href);
-      showPage(link.href.split('#')[1]);
+      showAppPage(link.href.split('#')[1]);
     });
   });
 };
 
-function showPage(url) {
-  console.log(url);
+/**
+ * Check if the page exists in the app
+ * @param hash
+ * @returns {Element}
+ */
+function checkAppPageExists(hash) {
+  return document.querySelector('#' + hash);
+}
+
+/**
+ * Display the app page
+ * @param pageId - The page to display
+ */
+function showAppPage(pageId) {
+  const page = checkAppPageExists(pageId);
+  if (!page) return;
   document.querySelectorAll('div').forEach(function(page) {
     page.style.display = 'none';
   });
-  document.querySelector('#' + url).style.display = 'block';
+  page.style.display = 'block';
 }
