@@ -1,4 +1,4 @@
-class SpeechSynthesis {
+export class SpeechSynthesis {
 
   constructor() {
     this.voices = window.speechSynthesis.getVoices();
