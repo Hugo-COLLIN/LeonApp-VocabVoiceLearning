@@ -8,9 +8,10 @@ class Picture {
     }
 
     /**
-     * Create a new image element and add it to the page.
+     * Create a new image element and add it to the page
+     * @param classDivName name of the html div or class
      */
-    addPicture() {
+    addPicture(classDivName) {
         // Create a new image element.
         const img = document.createElement('img');
 
@@ -20,6 +21,9 @@ class Picture {
         img.setAttribute('title', this.pictureName);
 
         // Add the image to the page.
-        document.querySelector('#pictures').appendChild(img);
+        document.querySelector(classDivName).appendChild(img);
     }
 }
+
+// const picture = new Picture('biche', 'ressources/biche.jpg');
+// picture.addPicture('#pictures');
