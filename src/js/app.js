@@ -40,7 +40,7 @@ function checkAppPageExists(hash) {
 function showAppPage(pageId) {
   const page = checkAppPageExists(pageId);
   if (!page) return;
-  document.querySelectorAll('div').forEach(function(page) {
+  document.querySelectorAll('main > div').forEach(function(page) {
     page.style.display = 'none';
   });
   page.style.display = 'block';
