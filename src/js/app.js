@@ -1,3 +1,3 @@
-import {initRouter} from "./spa";
+import {initRouter} from "./spa.js";
 
 initRouter();
