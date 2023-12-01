@@ -1,7 +1,9 @@
+import {SpeechSynthesis} from "./SpeechSynthesis.js";
+
 /**
  * A class representing a picture
  */
-class Picture {
+export class Picture {
     constructor(pictureName, picturePath) {
         this.pictureName = pictureName;
         this.picturePath = picturePath;
@@ -12,19 +14,25 @@ class Picture {
      * @param classDivName name of the html div or class
      */
     addPicture(classDivName) {
-        document.querySelector(classDivName).setAttribute('src', this.pictureName);
-        document.querySelector(classDivName).setAttribute('src', this.picturePath);
+        const classDiv = document.querySelector(classDivName);
+        classDiv.setAttribute('alt', this.pictureName);
+        classDiv.setAttribute('src', this.picturePath);
     }
 
     /**
      * Say the picture name
      */
     sayPictureName() {
-        const speechSynthesis = new SpeechSynthesis();
-        speechSynthesis.speak(this.pictureName);
+        new SpeechSynthesis().speak(this.pictureName);
     }
-
 }
 
-// const picture = new Picture('biche', 'ressources/biche.jpg');
-// picture.addPicture('.cell:nth-of-type(1)>img');
+/**
+ * Add training pictures to the page
+ */
+export function addTrainingPictures() {
+    const picture = new Picture('biche', 'ressources/biche.jpg');
+    picture.addPicture('.cell:nth-of-type(1)>img');
+    document.querySelector('.cell:nth-of-type(1)')
+        .addEventListener('click',picture.sayPictureName.bind(picture));
+}
