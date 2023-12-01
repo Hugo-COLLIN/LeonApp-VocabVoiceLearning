@@ -12,18 +12,10 @@ class Picture {
      * @param classDivName name of the html div or class
      */
     addPicture(classDivName) {
-        // Create a new image element.
-        const img = document.createElement('img');
-
-        // Set the image's attributes.
-        img.setAttribute('src', this.picturePath);
-        img.setAttribute('alt', this.pictureName);
-        img.setAttribute('title', this.pictureName);
-
-        // Add the image to the page.
-        document.querySelector(classDivName).appendChild(img);
+        document.querySelector(classDivName).setAttribute('src', this.pictureName);
+        document.querySelector(classDivName).setAttribute('src', this.picturePath);
     }
 }
 
 // const picture = new Picture('biche', 'ressources/biche.jpg');
-// picture.addPicture('#pictures');
+// picture.addPicture('.cell:nth-of-type(1)>img');
