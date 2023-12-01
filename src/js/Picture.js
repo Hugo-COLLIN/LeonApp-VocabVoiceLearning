@@ -15,6 +15,15 @@ class Picture {
         document.querySelector(classDivName).setAttribute('src', this.pictureName);
         document.querySelector(classDivName).setAttribute('src', this.picturePath);
     }
+
+    /**
+     * Say the picture name
+     */
+    sayPictureName() {
+        const speechSynthesis = new SpeechSynthesis();
+        speechSynthesis.speak(this.pictureName);
+    }
+
 }
 
 // const picture = new Picture('biche', 'ressources/biche.jpg');
