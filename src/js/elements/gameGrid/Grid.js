@@ -1,6 +1,13 @@
-import { Cell } from './Cell.js';
+import {NotImplementedError} from "../../application/errors/NotImplementedError.js";
+
+/**
+ * An abstract class representing a grid
+ */
 export class Grid {
     constructor(gridName, appendSelector) {
+        if (this.constructor === Grid)
+          throw new NotImplementedError();
+
         this.gridName = gridName;
         this.parentSelector = document.querySelector(appendSelector);
 
@@ -17,15 +24,7 @@ export class Grid {
      * @param size - The size of the grid (size x size)
      */
     initCells(size = 3) {
-      for (let i = 0; i < size * size; i++) {
-        const cell = new Cell();
-        this.grid.appendChild(cell.getCell());
-        this.cells.add(cell);
-      }
-
-      // Set the grid size
-      this.grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-      this.grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+      throw new NotImplementedError();
     }
 
     setCellsImages(path, imageList) {
@@ -34,11 +33,5 @@ export class Grid {
         cell.initCellPicture(path + imageList[i].name, imageList[i].alt ?? "");
         i++;
       }
-      // functional
-      // console.log(imageList)
-      // this.cells.forEach((cell, index) => {
-      //   console.log(imageList[index])
-      //   cell.setCellImage(path + imageList[index].name, imageList[index].name);
-      // });
     }
 }

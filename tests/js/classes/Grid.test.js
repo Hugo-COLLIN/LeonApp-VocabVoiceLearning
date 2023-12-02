@@ -1,5 +1,5 @@
 const { JSDOM } = require('jsdom');
-const { Grid } = require('../../../src/js/elements/grid/Grid');
+const { Grid } = require('../../../src/js/elements/gameGrid/Grid');
 
 describe('Grid', () => {
   test('constructor', () => {
