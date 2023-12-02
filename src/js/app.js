@@ -1,7 +1,8 @@
-import {initRouter} from "./application/router/router.js";
-import {initPagesContent} from "./pages/pages.js";
+import {initRouter} from "./application/router.js";
+import {addEvaluationPictures} from "./pages/gridGame.js";
+import {initPagesContent} from "./pages/pages";
+
 
 initRouter();
 initPagesContent();
-
-
+addEvaluationPictures();
