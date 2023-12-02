@@ -18,7 +18,7 @@ export function appendGrid() {
     {name: 'biche.jpg', alt: 'biche'},
     {name: 'chat.jpg', alt: 'chat'},
     {name: 'cochon.jpg', alt: 'cochon'},
-    {name: 'giraffe.jpg', alt: 'girafe'},
+    {name: 'girafe.jpg', alt: 'girafe'},
     {name: 'lion.jpg', alt: 'lion'},
     {name: 'panda.jpg', alt: 'panda'},
     {name: 'chien.jpg', alt: 'chien'},
