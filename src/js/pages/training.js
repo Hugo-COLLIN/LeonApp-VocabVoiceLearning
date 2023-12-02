@@ -14,4 +14,27 @@ export function addTrainingPictures() {
 export function appendGrid() {
   const grid = new Grid('grid', '#learn > .grid-container');
   grid.initCells(3);
+  grid.setCellsImages('assets/grids/animals-1/', [
+    {name: 'biche.jpg'},
+    {name: 'chat.jpg'},
+    {name: 'cochon.jpg'},
+    {name: 'giraffe.jpg'},
+    {name: 'lion.jpg'},
+    {name: 'panda.jpg'},
+    {name: 'chien.jpg'},
+    {name: 'chimpanze.jpg'},
+    {name: 'tortue.png'},
+  ]);
 }
+
+//[
+//     {name: 'biche.jpg'},
+//     {name: 'bison.jpg'},
+//     {name: 'blaireau.jpg'},
+//     {name: 'bouquetin.jpg'},
+//     {name: 'cerf.jpg'},
+//     {name: 'chevreuil.jpg'},
+//     {name: 'chien.jpg'},
+//     {name: 'chimpanze.jpg'},
+//     {name: 'chouette.jpg'},
+//   ]

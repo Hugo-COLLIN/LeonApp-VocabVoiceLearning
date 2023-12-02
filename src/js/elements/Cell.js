@@ -11,6 +11,8 @@ export class Cell {
 
     this.cell.appendChild(img);
     this.cell.appendChild(figcaption);
+
+    this.picture = null;
   }
 
   getCell() {

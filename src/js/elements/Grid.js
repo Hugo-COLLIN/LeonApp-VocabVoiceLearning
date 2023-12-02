@@ -29,14 +29,16 @@ export class Grid {
     }
 
     setCellsImages(path, imageList) {
-      // let i = 0;
-      // for (const cell of this.cells) {
-      //   cell.setCellImage(path + imageList[i].name, imageList[i].name);
-      //   i++;
-      // }
+      let i = 0;
+      for (const cell of this.cells) {
+        cell.setCellImage(path + imageList[i].name, imageList[i].name);
+        i++;
+      }
       // functional
-      this.cells.forEach((cell, index) => {
-        cell.setCellImage(path + imageList[index].name, imageList[index].name);
-      });
+      // console.log(imageList)
+      // this.cells.forEach((cell, index) => {
+      //   console.log(imageList[index])
+      //   cell.setCellImage(path + imageList[index].name, imageList[index].name);
+      // });
     }
 }
