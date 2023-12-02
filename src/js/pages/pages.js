@@ -1,4 +1,4 @@
-import {addTrainingPictures, appendGrid} from "./training.js";
+import {appendGrid} from "./training.js";
 
 export function initPagesContent() {
   initTrainingPage();

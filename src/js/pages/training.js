@@ -15,15 +15,15 @@ export function appendGrid() {
   const grid = new Grid('grid', '#learn > .grid-container');
   grid.initCells(3);
   grid.setCellsImages('assets/grids/animals-1/', [
-    {name: 'biche.jpg'},
-    {name: 'chat.jpg'},
-    {name: 'cochon.jpg'},
-    {name: 'giraffe.jpg'},
-    {name: 'lion.jpg'},
-    {name: 'panda.jpg'},
-    {name: 'chien.jpg'},
-    {name: 'chimpanze.jpg'},
-    {name: 'tortue.png'},
+    {name: 'biche.jpg', alt: 'biche'},
+    {name: 'chat.jpg', alt: 'chat'},
+    {name: 'cochon.jpg', alt: 'cochon'},
+    {name: 'giraffe.jpg', alt: 'girafe'},
+    {name: 'lion.jpg', alt: 'lion'},
+    {name: 'panda.jpg', alt: 'panda'},
+    {name: 'chien.jpg', alt: 'chien'},
+    {name: 'chimpanze.jpg', alt: 'chimpanzé'},
+    {name: 'tortue.png', alt: 'tortue'},
   ]);
 }
 

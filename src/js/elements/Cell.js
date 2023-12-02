@@ -1,15 +1,12 @@
+import {Picture} from "./Picture.js";
+
 export class Cell {
   constructor() {
     this.cell = document.createElement('div');
     this.cell.classList.add('cell');
 
-    const img = document.createElement('img');
-    img.src = ""; // Vous pouvez définir une source d'image ici
-    img.alt = "";
-
     const figcaption = document.createElement('figcaption');
 
-    this.cell.appendChild(img);
     this.cell.appendChild(figcaption);
 
     this.picture = null;
@@ -19,9 +16,10 @@ export class Cell {
     return this.cell;
   }
 
-  setCellImage(src, alt = "") {
-    this.cell.querySelector('img').src = src;
-    this.cell.querySelector('img').alt = alt;
+  initCellPicture(src, alt = "") {
+      this.picture = new Picture(alt, src);
+      this.cell.appendChild(this.picture.getPicture());
+      this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 
   setCellCaption(text) {

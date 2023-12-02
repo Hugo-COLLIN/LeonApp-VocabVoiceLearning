@@ -31,7 +31,7 @@ export class Grid {
     setCellsImages(path, imageList) {
       let i = 0;
       for (const cell of this.cells) {
-        cell.setCellImage(path + imageList[i].name, imageList[i].name);
+        cell.initCellPicture(path + imageList[i].name, imageList[i].alt ?? "");
         i++;
       }
       // functional
