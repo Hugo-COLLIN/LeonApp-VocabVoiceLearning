@@ -1,5 +1,5 @@
 const { JSDOM } = require('jsdom');
-const { Grid } = require('../../../src/js/classes/Grid');
+const { Grid } = require('../../../src/js/elements/Grid');
 
 describe('Grid', () => {
   test('constructor', () => {
@@ -17,7 +17,7 @@ describe('Grid', () => {
     global.document = dom.window.document;
 
     const grid = new Grid('testGrid', '#parent');
-    grid.setCells(3);
+    grid.initCells(3);
 
     const cells = document.querySelectorAll('.cell');
     expect(cells.length).toBe(9);

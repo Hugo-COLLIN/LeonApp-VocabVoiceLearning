@@ -1,4 +1,5 @@
-import {Picture} from "../classes/Picture.js";
+import {Picture} from "../elements/Picture.js";
+import {Grid} from "../elements/Grid.js";
 
 /**
  * Add training pictures to the page
@@ -8,4 +9,9 @@ export function addTrainingPictures() {
   picture.addPicture('.cell:nth-of-type(1)>img');
   document.querySelector('.cell:nth-of-type(1)')
     .addEventListener('click', picture.sayPictureName.bind(picture));
+}
+
+export function appendGrid() {
+  const grid = new Grid('grid', '#learn > .grid-container');
+  grid.initCells(3);
 }

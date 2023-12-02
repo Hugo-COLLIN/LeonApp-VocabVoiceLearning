@@ -1,5 +1,7 @@
 import {initRouter} from "./application/router.js";
-import {addTrainingPictures} from "./pages/training.js";
+import {initPagesContent} from "./pages/pages.js";
 
 initRouter();
-addTrainingPictures();
+initPagesContent();
+
+
