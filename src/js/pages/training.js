@@ -1,4 +1,4 @@
-import {Grid} from "../elements/Grid.js";
+import {Grid} from "../elements/grid/Grid.js";
 
 export function appendGrid() { //appendgrid(Serie)
   const grid = new Grid('grid', '#learn > .grid-container');
