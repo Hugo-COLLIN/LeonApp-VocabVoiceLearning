@@ -4,9 +4,9 @@ export class Cell {
   constructor() {
     this.cell = document.createElement('div');
     this.cell.classList.add('cell');
+    this.cell.style.cursor = 'pointer';
 
     const figcaption = document.createElement('figcaption');
-
     this.cell.appendChild(figcaption);
 
     this.picture = null;
