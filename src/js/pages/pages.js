@@ -6,5 +6,4 @@ export function initPagesContent() {
 
 function initTrainingPage() {
   appendGrid();
-  // addTrainingPictures();
 }
