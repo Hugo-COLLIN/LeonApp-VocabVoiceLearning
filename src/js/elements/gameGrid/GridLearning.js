@@ -24,4 +24,18 @@ export class GridLearning extends Grid {
       this.grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
       this.grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     }
+
+    /**
+     * Add cells to the grid
+     * @param path
+     * @param imageList
+     */
+    fillCells(path, imageList) {
+      let i = 0;
+      for (const cell of this.cells) {
+        cell.initCellPicture(path + imageList[i].name, imageList[i].alt ?? "");
+        cell.setCellCaption(imageList[i].alt ?? "")
+        i++;
+      }
+    }
 }

@@ -27,11 +27,7 @@ export class Grid {
       throw new NotImplementedError();
     }
 
-    setCellsImages(path, imageList) {
-      let i = 0;
-      for (const cell of this.cells) {
-        cell.initCellPicture(path + imageList[i].name, imageList[i].alt ?? "");
-        i++;
-      }
+    fillCells(path, imageList) {
+      throw new NotImplementedError();
     }
 }

@@ -5,7 +5,7 @@ export function appendGrid() { //appendgrid(Serie)
   const grid = new GridLearning('grid', '#learn > .grid-container');
   grid.initCells(3);
   // TODO: remplacer imageList par un objet Serie ?
-  grid.setCellsImages('assets/grids/animals-1/', [
+  grid.fillCells('assets/grids/animals-1/', [
     {name: 'biche.jpg', alt: 'biche'},
     {name: 'chat.jpg', alt: 'chat'},
     {name: 'cochon.jpg', alt: 'cochon'},
