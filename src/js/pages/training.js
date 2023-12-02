@@ -1,11 +1,11 @@
 import {GridLearning} from "../elements/gameGrid/GridLearning.js";
-import {Grid} from "../elements/gameGrid/Grid.js";
+import {GameSet} from "../elements/GameSet.js";
 
-export function appendGrid() { //appendgrid(Serie)
+export function appendGrid() {
   const grid = new GridLearning('grid', '#learn > .grid-container');
   grid.initCells(3);
-  // TODO: remplacer imageList par un objet Serie ?
-  grid.fillCells('assets/grids/animals-1/', [
+
+  const gameSet = new GameSet('assets/grids/animals-1/', [
     {name: 'biche.jpg', alt: 'biche'},
     {name: 'chat.jpg', alt: 'chat'},
     {name: 'cochon.jpg', alt: 'cochon'},
@@ -16,7 +16,10 @@ export function appendGrid() { //appendgrid(Serie)
     {name: 'chimpanze.jpg', alt: 'chimpanzé'},
     {name: 'tortue.png', alt: 'tortue'},
   ]);
+
+  grid.fillCells(gameSet);
 }
+
 
 //[
 //     {name: 'biche.jpg'},

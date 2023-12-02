@@ -30,12 +30,13 @@ export class GridLearning extends Grid {
      * @param path
      * @param imageList
      */
-    fillCells(path, imageList) {
+    fillCells(gameSet) {
       let i = 0;
       for (const cell of this.cells) {
-        cell.initCellPicture(path + imageList[i].name, imageList[i].alt ?? "");
-        cell.setCellCaption(imageList[i].alt ?? "")
+        cell.initCellPicture(gameSet.path + gameSet.imageList[i].name, gameSet.imageList[i].alt ?? "");
+        cell.setCellCaption(gameSet.imageList[i].alt ?? "")
         i++;
       }
     }
+
 }

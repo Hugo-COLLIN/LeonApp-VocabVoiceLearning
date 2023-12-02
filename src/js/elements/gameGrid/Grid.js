@@ -27,7 +27,7 @@ export class Grid {
       throw new NotImplementedError();
     }
 
-    fillCells(path, imageList) {
+    fillCells(gameSet) {
       throw new NotImplementedError();
     }
 }
