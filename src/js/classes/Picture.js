@@ -27,3 +27,20 @@ export class Picture {
     }
 }
 
+/**
+ * Get all pictures
+ * @returns {Picture[]}
+ */
+export function getPictures() {
+    return [
+        new Picture('biche', 'assets/grids/animals-1/biche.jpg'),
+        new Picture('chat', 'assets/grids/animals-1/chat.jpg'),
+        new Picture('chien', 'assets/grids/animals-1/chien.jpg'),
+        new Picture('cochon', 'assets/grids/animals-1/cochon.jpg'),
+        new Picture('girafe', 'assets/grids/animals-1/girafe.jpg'),
+        new Picture('lion', 'assets/grids/animals-1/lion.jpg'),
+        new Picture('panda', 'assets/grids/animals-1/panda.jpg'),
+        new Picture('singe', 'assets/grids/animals-1/singe.jpg'),
+        new Picture('tortue', 'assets/grids/animals-1/tortue.jpg'),
+    ];
+}
