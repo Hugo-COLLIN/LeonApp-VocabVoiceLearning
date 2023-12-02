@@ -1,5 +1,8 @@
 import {Picture} from "./Picture.js";
 
+/**
+ * A class representing a cell in a grid
+ */
 export class Cell {
   constructor() {
     this.cell = document.createElement('div');

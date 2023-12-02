@@ -4,6 +4,12 @@ import {SpeechSynthesis} from "../SpeechSynthesis.js";
  * A class representing a picture
  */
 export class Picture {
+
+  /**
+   * Constructor
+   * @param pictureName - The picture name
+   * @param picturePath - The image path
+   */
     constructor(pictureName, picturePath) {
         this.pictureName = pictureName;
         this.picturePath = picturePath;
@@ -20,6 +26,10 @@ export class Picture {
         new SpeechSynthesis().speak(this.pictureName);
     }
 
+    /**
+     * Get the picture
+     * @returns {HTMLImageElement} - The picture HTML element
+     */
     getPicture() {
       return this.img;
     }

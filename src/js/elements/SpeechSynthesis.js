@@ -1,5 +1,11 @@
+/**
+ * Class for speech synthesis.
+ */
 export class SpeechSynthesis {
 
+  /**
+   * Constructor.
+   */
   constructor() {
     this.voices = window.speechSynthesis.getVoices();
   }
