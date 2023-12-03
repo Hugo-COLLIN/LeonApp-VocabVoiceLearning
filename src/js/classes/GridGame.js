@@ -1,20 +1,24 @@
-import {getPictures, Picture} from "./Picture.js";
+import {getPictures} from "./Picture.js";
 import {SpeechSynthesis} from "./SpeechSynthesis.js";
 
 export class GridGame {
     constructor() {
         this.pictureNames = getPictures().map(picture => picture.pictureName);
-        this.selectedPictureName = this.getRandomPictureName();
         this.speechSynthesis = new SpeechSynthesis();
+        this.selectedPictureName = this.getRandomPictureName();
     }
 
     /**
      * Get a random picture name
-     * @returns {Picture}
      */
     getRandomPictureName() {
-        const pictureName = this.pictureNames[Math.floor(Math.random() * this.pictureNames.length)];
-        this.pictureNames.splice(this.pictureNames.indexOf(pictureName), 1);
+        let pictureName = this.pictureNames[Math.floor(Math.random() * this.pictureNames.length)];
+        if(this.pictureNames.length > 0) {
+            this.pictureNames.splice(this.pictureNames.indexOf(pictureName), 1);
+        }
+        else
+            pictureName = 'Bravo, vous avez gagné !'
+        this.speechSynthesis.speak(pictureName);
         return pictureName;
     }
 
@@ -23,9 +27,13 @@ export class GridGame {
      * @param pictureName
      */
     comparePictureName(pictureName) {
-        if (pictureName === this.selectedPictureName)
+        if (pictureName === this.selectedPictureName) {
             this.speechSynthesis.speak('Bonne réponse');
-        else
+            this.selectedPictureName = this.getRandomPictureName();
+        }
+        else {
             this.speechSynthesis.speak('Mauvaise réponse');
+            this.speechSynthesis.speak(this.selectedPictureName);
+        }
     }
 }
