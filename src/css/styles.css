@@ -1,3 +1,39 @@
 main > div {
     display: none;
 }
+
+
+/**
+--- PICTURE GRID ---
+ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 520px;
+}
+
+.cell {
+    background: #ccc;
+    text-align: center;
+    position: relative;
+}
+
+.cell img {
+    width: 100%;
+    height: auto;
+}
+
+.cell figcaption {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
