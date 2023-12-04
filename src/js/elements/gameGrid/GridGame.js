@@ -5,11 +5,13 @@ import {SpeechSynthesis} from "../SpeechSynthesis.js";
 export class GridGame extends Grid {
   constructor(gridName, appendSelector, gameSet) {
     super(gridName, appendSelector);
+    this.gameSet = gameSet;
     this.pictureNames = gameSet.imageList.map(image => image.alt);
     this.speechSynthesis = new SpeechSynthesis();
   }
 
   startGame() {
+    this.pictureNames = this.gameSet.imageList.map(image => image.alt);
     this.selectedPictureName = this.getRandomPictureName();
   }
 
