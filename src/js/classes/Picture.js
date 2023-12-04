@@ -1,4 +1,4 @@
-import {SpeechSynthesis} from "./SpeechSynthesis.js";
+import {SpeechSynthesis} from "../elements/SpeechSynthesis.js";
 
 /**
  * A class representing a picture

@@ -1,6 +1,6 @@
 import {getPictures} from "../classes/Picture.js";
 import {GridGame} from "../classes/GridGame.js";
-import {SpeechSynthesis} from "../classes/SpeechSynthesis.js";
+import {SpeechSynthesis} from "../elements/SpeechSynthesis.js";
 
 /**
  * Add pictures to the game page
