@@ -1,15 +1,15 @@
 import {Grid} from "./Grid.js";
 import {Cell} from './Cell.js';
-import {getPictures} from "./Picture.js";
 import {SpeechSynthesis} from "../SpeechSynthesis.js";
 
 export class GridGame extends Grid {
-  constructor(gridName, appendSelector) {
+  constructor(gridName, appendSelector, gameSet) {
     super(gridName, appendSelector);
-    this.pictureNames = getPictures().map(picture => picture.pictureName);
+    this.pictureNames = gameSet.imageList.map(image => image.alt);
     this.speechSynthesis = new SpeechSynthesis();
     this.selectedPictureName = this.getRandomPictureName();
   }
+
 
   initCells(size = 3) {
     for (let i = 0; i < size * size; i++) {

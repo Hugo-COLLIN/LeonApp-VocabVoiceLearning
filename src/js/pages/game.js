@@ -2,9 +2,6 @@ import {GridGame} from "../elements/gameGrid/GridGame.js";
 import {GameSet} from "../elements/GameSet.js";
 
 export function initGameGrid() {
-  const gridGame = new GridGame('gridGame', '#game > .grid-container');
-  gridGame.initCells(3);
-
   const gameSet = new GameSet('assets/grids/animals-1/', [
     {name: 'biche.jpg', alt: 'biche'},
     {name: 'chat.jpg', alt: 'chat'},
@@ -17,5 +14,8 @@ export function initGameGrid() {
     {name: 'tortue.png', alt: 'tortue'},
   ]);
 
+  const gridGame = new GridGame('gridGame', '#game > .grid-container', gameSet);
+  gridGame.initCells(3);
   gridGame.fillCells(gameSet);
 }
+
