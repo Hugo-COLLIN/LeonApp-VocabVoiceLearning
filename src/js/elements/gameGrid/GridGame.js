@@ -7,9 +7,11 @@ export class GridGame extends Grid {
     super(gridName, appendSelector);
     this.pictureNames = gameSet.imageList.map(image => image.alt);
     this.speechSynthesis = new SpeechSynthesis();
-    this.selectedPictureName = this.getRandomPictureName();
   }
 
+  startGame() {
+    this.selectedPictureName = this.getRandomPictureName();
+  }
 
   initCells(size = 3) {
     for (let i = 0; i < size * size; i++) {

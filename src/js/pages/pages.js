@@ -11,5 +11,9 @@ function initTrainingPage() {
 }
 
 function initGamePage() {
-  initGameGrid();
+  const gridGame = initGameGrid();
+  document.querySelector('#game').addEventListener('show', () => {
+    gridGame.startGame();
+  });
 }
+
