@@ -7,12 +7,20 @@ export class Cell {
   constructor() {
     this.cell = document.createElement('div');
     this.cell.classList.add('cell');
-    this.cell.style.cursor = 'pointer';
+    this.setCursorPointer();
 
     const figcaption = document.createElement('figcaption');
     this.cell.appendChild(figcaption);
 
     this.picture = null;
+  }
+
+  setCursorPointer() {
+    this.cell.style.cursor = 'pointer';
+  }
+
+  setCursorAuto() {
+    this.cell.style.cursor = 'auto';
   }
 
   getCell() {

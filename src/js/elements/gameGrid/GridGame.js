@@ -2,6 +2,8 @@ import {Grid} from "./Grid.js";
 import {Cell} from './Cell.js';
 import {SpeechSynthesis} from "../SpeechSynthesis.js";
 
+const WIN_MESSAGE = 'Bravo, vous avez gagné !';
+
 export class GridGame extends Grid {
   constructor(gridName, appendSelector, gameSet) {
     super(gridName, appendSelector);
@@ -11,6 +13,7 @@ export class GridGame extends Grid {
   }
 
   startGame() {
+    this.setCellsCursor('pointer');
     this.pictureNames = this.gameSet.imageList.map(image => image.alt);
     this.selectedPictureName = this.getRandomPictureName();
   }
@@ -40,19 +43,31 @@ export class GridGame extends Grid {
     }
   }
 
+  setCellsCursor(cursorType) {
+    for (const cell of this.cells) {
+      cell.getCell().style.cursor = cursorType;
+    }
+  }
+
 
   getRandomPictureName() {
     let pictureName = this.pictureNames[Math.floor(Math.random() * this.pictureNames.length)];
     if(this.pictureNames.length > 0) {
       this.pictureNames.splice(this.pictureNames.indexOf(pictureName), 1);
     }
-    else
-      pictureName = 'Bravo, vous avez gagné !'
+    else {
+      pictureName = WIN_MESSAGE;
+      this.setCellsCursor('auto');
+    }
     this.speechSynthesis.speak(pictureName);
     return pictureName;
   }
 
   comparePictureName(pictureName) {
+    if (this.selectedPictureName === WIN_MESSAGE) {
+      return;
+    }
+
     if (pictureName === this.selectedPictureName) {
       this.speechSynthesis.speak('Bonne réponse');
       this.selectedPictureName = this.getRandomPictureName();
