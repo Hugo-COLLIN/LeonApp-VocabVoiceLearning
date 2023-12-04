@@ -1,6 +1,6 @@
-import {getPictures} from "../classes/Picture.js";
-import {GridGame} from "../classes/GridGame.js";
+import {GridGame} from "../elements/gameGrid/GridGame.js";
 import {SpeechSynthesis} from "../elements/SpeechSynthesis.js";
+import {getPictures} from "../elements/gameGrid/Picture.js";
 
 /**
  * Add pictures to the game page
@@ -8,8 +8,8 @@ import {SpeechSynthesis} from "../elements/SpeechSynthesis.js";
 export function addEvaluationPictures() {
     const gridGame = new GridGame();
     getPictures().forEach((picture, index) => {
-        picture.addPicture(`#play .grid .cell:nth-of-type(${index + 1})>img`);
-        document.querySelector(`#play .grid .cell:nth-of-type(${index + 1})`)
+        picture.addPicture(`#game .grid .cell:nth-of-type(${index + 1})>img`);
+        document.querySelector(`#game .grid .cell:nth-of-type(${index + 1})`)
             .addEventListener('click', gridGame.comparePictureName.bind(gridGame, picture.pictureName));
     });
     document.querySelector('#play-button').addEventListener('click', () => {

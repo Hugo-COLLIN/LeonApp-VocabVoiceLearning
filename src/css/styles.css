@@ -12,6 +12,11 @@ main > div {
     width: 520px;
 }
 
+.temp {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
 .cell {
     background: #ccc;
     text-align: center;

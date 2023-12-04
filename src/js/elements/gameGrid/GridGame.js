@@ -1,5 +1,5 @@
+import {SpeechSynthesis} from "../SpeechSynthesis.js";
 import {getPictures} from "./Picture.js";
-import {SpeechSynthesis} from "./SpeechSynthesis.js";
 
 export class GridGame {
     constructor() {
