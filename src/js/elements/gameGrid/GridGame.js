@@ -13,6 +13,10 @@ export class GridGame extends Grid {
     this.selectedPictureName = this.getRandomPictureName();
   }
 
+  saySelectedPictureName() {
+    this.speechSynthesis.speak(this.selectedPictureName);
+  }
+
   initCells(size = 3) {
     for (let i = 0; i < size * size; i++) {
       const cell = new Cell();

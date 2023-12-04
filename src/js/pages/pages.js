@@ -15,5 +15,8 @@ function initGamePage() {
   document.querySelector('#game').addEventListener('show', () => {
     gridGame.startGame();
   });
+  document.querySelector('#game .play-button').addEventListener('click', () => {
+    gridGame.saySelectedPictureName();
+  });
 }
 
