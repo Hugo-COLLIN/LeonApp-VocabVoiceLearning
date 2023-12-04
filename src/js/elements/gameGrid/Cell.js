@@ -22,11 +22,14 @@ export class Cell {
   initCellPicture(src, alt = "") {
       this.picture = new Picture(alt, src);
       this.cell.appendChild(this.picture.getPicture());
-      this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 
   setCellCaption(text) {
     this.cell.querySelector('figcaption').textContent = text;
+  }
+
+  setCellOralMessage(text) {
+    this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 }
 

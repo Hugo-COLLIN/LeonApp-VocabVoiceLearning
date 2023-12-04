@@ -27,13 +27,13 @@ export class GridLearning extends Grid {
 
     /**
      * Add cells to the grid
-     * @param path
-     * @param imageList
+     * @param gameSet
      */
     fillCells(gameSet) {
       let i = 0;
       for (const cell of this.cells) {
         cell.initCellPicture(gameSet.path + gameSet.imageList[i].name, gameSet.imageList[i].alt ?? "");
+        cell.setCellOralMessage(gameSet.imageList[i].alt ?? "");
         cell.setCellCaption(gameSet.imageList[i].alt ?? "")
         i++;
       }
