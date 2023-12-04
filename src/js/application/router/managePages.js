@@ -18,4 +18,5 @@ export function showAppPage(pageId) {
     page.style.display = 'none';
   });
   page.style.display = 'block';
+  page.dispatchEvent(new Event('show'));
 }

@@ -7,12 +7,20 @@ export class Cell {
   constructor() {
     this.cell = document.createElement('div');
     this.cell.classList.add('cell');
-    this.cell.style.cursor = 'pointer';
+    this.setCursorPointer();
 
     const figcaption = document.createElement('figcaption');
     this.cell.appendChild(figcaption);
 
     this.picture = null;
+  }
+
+  setCursorPointer() {
+    this.cell.style.cursor = 'pointer';
+  }
+
+  setCursorAuto() {
+    this.cell.style.cursor = 'auto';
   }
 
   getCell() {
@@ -22,11 +30,14 @@ export class Cell {
   initCellPicture(src, alt = "") {
       this.picture = new Picture(alt, src);
       this.cell.appendChild(this.picture.getPicture());
-      this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 
   setCellCaption(text) {
     this.cell.querySelector('figcaption').textContent = text;
+  }
+
+  setCellOralMessage() {
+    this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 }
 
