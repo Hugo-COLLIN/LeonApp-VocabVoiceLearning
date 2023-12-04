@@ -28,7 +28,7 @@ export class Cell {
     this.cell.querySelector('figcaption').textContent = text;
   }
 
-  setCellOralMessage(text) {
+  setCellOralMessage() {
     this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 }
