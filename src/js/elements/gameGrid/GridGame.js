@@ -10,6 +10,9 @@ export class GridGame extends Grid {
     this.gameSet = gameSet;
     this.pictureNames = gameSet.imageList.map(image => image.alt);
     this.speechSynthesis = new SpeechSynthesis();
+
+    this.score = 0;
+    this.total = gameSet.imageList.length;
   }
 
   saySelectedPictureName() {
@@ -52,6 +55,7 @@ export class GridGame extends Grid {
 
     if (pictureName === this.selectedPictureName) {
       this.speechSynthesis.speak('Bonne réponse');
+      this.score++;
       this.selectedPictureName = this.getRandomPictureName();
     }
     else {
@@ -68,6 +72,8 @@ export class GridGame extends Grid {
 
   stopGame() {
     this.setCellsCursor('auto');
+    document.querySelector('.score').textContent = this.score;
+    document.querySelector('.total').textContent = this.total;
     showAppPage("result")
   }
 }
