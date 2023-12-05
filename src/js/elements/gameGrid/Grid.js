@@ -21,10 +21,21 @@ export class Grid {
     }
 
     /**
+     * Clear the grid
+     */
+    clearGrid() {
+      while (this.grid.firstChild) {
+        this.grid.removeChild(this.grid.firstChild);
+      }
+      this.cells.clear();
+    }
+
+    /**
      * Add cells to the grid
      * @param size - The size of the grid (size x size)
      */
     initCells(size = 3) {
+      this.clearGrid();
       for (let i = 0; i < size * size; i++) {
         const cell = new Cell();
         this.grid.appendChild(cell.getCell());
