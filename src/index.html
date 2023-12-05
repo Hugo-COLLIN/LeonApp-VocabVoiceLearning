@@ -11,27 +11,50 @@
 </head>
 <body>
   <main>
-    <div id="language">
+    <header>
+      <h1>Leon</h1>
+      <h3>Apprendre du vocabulaire en s'amusant !</h3>
+    </header>
+
+    <div id="lang">
       <h2>Langue</h2>
-      <a href="#series">Séries</a>
+      <button><a href="#series">Séries</a></button>
     </div>
 
-    <div id="series">
+    <div id="sets">
       <h2>Séries</h2>
-      <a href="#learn">Apprentissage</a>
+      <a href="#learn" class="button">Apprentissage</a>
     </div>
 
     <div id="learn">
-      <h2>Apprentissage</h2>
+      <div class="page-head">
+        <div>
+          <a href="#sets" class="button">Retour aux séries</a>
+        </div>
+        <h2>Apprentissage</h2>
+        <div class="right">
+          <a href="#game" class="button">Jouer ⨠</a>
+        </div>
+      </div>
+      <h4>Cliquez pour écouter : </h4>
       <div class="grid-container"></div>
-      <a href="#game">Jeu</a>
+      <div class="right">
+
+      </div>
     </div>
 
     <div id="game">
-      <h2>Jeu d'apprentissage</h2>
+      <div class="page-head">
+        <div>
+          <a href="#learn" class="button">Retour à l'apprentissage</a>
+        </div>
+        <h2>Jeu</h2>
+      </div>
+      <div class="inline center">
+        <h4>Cliquez sur l'animal correspondant : </h4>
+        <button class="button play-button">🔁Réécouter</button>
+      </div>
       <div class="grid-container"></div>
-      <button class="play-button">Réécouter</button>
-      <a href="#series">Séries</a>
     </div>
   </main>
 

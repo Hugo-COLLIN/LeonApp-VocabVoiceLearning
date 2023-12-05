@@ -8,7 +8,7 @@ export function initRouter() {
     const initialUrl =
       urlHash && checkAppPageExists(urlHash)
         ? urlHash
-        : 'series';
+        : 'sets';
 
     showAppPage(initialUrl);
 
