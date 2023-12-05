@@ -9,8 +9,8 @@ export class Cell {
     this.cell.classList.add('cell');
     this.setCursorPointer();
 
-    const figcaption = document.createElement('figcaption');
-    this.cell.appendChild(figcaption);
+    this.figcaption = document.createElement('figcaption');
+    this.cell.appendChild(this.figcaption);
 
     this.picture = null;
   }
@@ -28,8 +28,15 @@ export class Cell {
   }
 
   initCellPicture(src, alt = "") {
-      this.picture = new Picture(alt, src);
-      this.cell.appendChild(this.picture.getPicture());
+    this.picture = new Picture(alt, src);
+    this.cell.appendChild(this.picture.getPicture());
+  }
+
+  setCellPicture(src, alt = "") {
+    this.picture = new Picture(alt, src);
+    this.cell.replaceChild(this.picture.getPicture(), this.cell.querySelector('img'));
+    // console.log(this.picture.getPicture());
+    // console.log(this.cell.querySelector('figcaption').textContent)
   }
 
   setCellCaption(text) {
@@ -37,6 +44,7 @@ export class Cell {
   }
 
   setCellOralMessage() {
+    console.log(this.picture.sayPictureName.bind(this.picture));
     this.cell.addEventListener('click', this.picture.sayPictureName.bind(this.picture));
   }
 }
