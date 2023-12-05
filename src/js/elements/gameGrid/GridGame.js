@@ -18,14 +18,16 @@ export class GridGame extends Grid {
 
     // Écouter l'événement personnalisé
     window.addEventListener('speechEnded', () => {
-      this.isSpeaking = false;
+      this.isSpeaking = window.speechSynthesis.speaking;
     });
   }
 
   saySelectedPictureName() {
     this.isSpeaking = true;
     this.speechSynthesis.speak(this.selectedPictureName);
+    this.isSpeaking = window.speechSynthesis.speaking;
   }
+
 
   fillCells(gameSet) {
     let i = 0;
@@ -57,7 +59,7 @@ export class GridGame extends Grid {
 
 
   comparePictureName(pictureName) {
-    if (this.isSpeaking || this.selectedPictureName === WIN_MESSAGE) {
+    if (window.speechSynthesis.speaking || this.selectedPictureName === WIN_MESSAGE) {
       return;
     }
 
