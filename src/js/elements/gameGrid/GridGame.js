@@ -13,9 +13,17 @@ export class GridGame extends Grid {
 
     this.score = 0;
     this.total = gameSet.imageList.length;
+
+    this.isSpeaking = false;
+
+    // Écouter l'événement personnalisé
+    window.addEventListener('speechEnded', () => {
+      this.isSpeaking = false;
+    });
   }
 
   saySelectedPictureName() {
+    this.isSpeaking = true;
     this.speechSynthesis.speak(this.selectedPictureName);
   }
 
@@ -49,7 +57,7 @@ export class GridGame extends Grid {
 
 
   comparePictureName(pictureName) {
-    if (this.selectedPictureName === WIN_MESSAGE) {
+    if (this.isSpeaking || this.selectedPictureName === WIN_MESSAGE) {
       return;
     }
 
@@ -69,6 +77,9 @@ export class GridGame extends Grid {
     this.score = 0;
     this.total = this.gameSet.imageList.length;
     this.pictureNames = this.gameSet.imageList.map(image => image.alt);
+    this.score = 0;
+    this.total = this.gameSet.imageList.length;
+    this.speechSynthesis.speak('Cliquez sur les images correspondantes');
     this.selectedPictureName = this.getRandomPictureName();
   }
 
