@@ -30,7 +30,6 @@ const fruitsGameSet = new GameSet('assets/sets/fruits-1/', [
 export function initPagesContent() {
   document.querySelectorAll('#set-selector').forEach((element) => {
     element.addEventListener('click', (event) => {
-      console.log(event.target.innerText);
       switch (event.target.innerText.toLowerCase()) {
         case 'animaux':
           initGameSet(animalsGameSet);
@@ -39,7 +38,7 @@ export function initPagesContent() {
           initGameSet(fruitsGameSet);
           break;
         default:
-          console.log('set not found');
+          console.error('set not found');
       }
     });
   });

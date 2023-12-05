@@ -1,5 +1,5 @@
 import {Grid} from "./Grid.js";
-import {SpeechSynthesis} from "../SpeechSynthesis.js";
+import {Speecher} from "../Speecher.js";
 import {showAppPage} from "../../application/router/managePages.js";
 
 const WIN_MESSAGE = 'Bravo, vous avez gagné !';
@@ -9,7 +9,7 @@ export class GridGame extends Grid {
     super(gridName, appendSelector);
     this.gameSet = gameSet;
     this.pictureNames = gameSet.imageList.map(image => image.alt);
-    this.speechSynthesis = new SpeechSynthesis();
+    this.speechSynthesis = new Speecher();
 
     this.score = 0;
     this.total = gameSet.imageList.length;
@@ -81,8 +81,12 @@ export class GridGame extends Grid {
     this.score = 0;
     this.total = this.gameSet.imageList.length;
     this.pictureNames = this.gameSet.imageList.map(image => image.alt);
-    this.speechSynthesis.speak('Cliquez sur les images correspondantes');
+    this.initialSpeak();
     this.selectedPictureName = this.getRandomPictureName();
+  }
+
+  initialSpeak() {
+    this.speechSynthesis.speak('Cliquez sur les images correspondantes');
   }
 
   stopGame() {

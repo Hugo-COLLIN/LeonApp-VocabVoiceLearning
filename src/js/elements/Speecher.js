@@ -1,7 +1,7 @@
 /**
  * Class for speech synthesis.
  */
-export class SpeechSynthesis {
+export class Speecher {
 
   /**
    * Constructor.

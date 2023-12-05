@@ -1,4 +1,5 @@
 import {Grid} from "./Grid.js";
+import {Speecher} from "../Speecher.js";
 
 /**
  * A class representing a grid
@@ -6,6 +7,7 @@ import {Grid} from "./Grid.js";
 export class GridLearning extends Grid {
     constructor(gridName, appendSelector) {
         super(gridName, appendSelector);
+        this.speechSynthesis = new Speecher();
     }
 
     /**
@@ -20,6 +22,10 @@ export class GridLearning extends Grid {
         cell.setCellCaption(gameSet.imageList[i].alt ?? "")
         i++;
       }
+    }
+
+    initialSpeak() {
+      this.speechSynthesis.speak('Cliquez sur une image pour l\'entendre');
     }
 
 }
