@@ -2,7 +2,7 @@ import {appendGrid} from "./training.js";
 import {initGameGrid} from "./game.js";
 import {GameSet} from "../elements/GameSet.js";
 
-const gameSet = new GameSet('assets/grids/animals-1/', [
+const gameSet = new GameSet('assets/sets/animals-1/', [
   {name: 'biche.jpg', alt: 'biche'},
   {name: 'chat.jpg', alt: 'chat'},
   {name: 'cochon.jpg', alt: 'cochon'},
