@@ -2,6 +2,7 @@ import {GameSet} from "../elements/GameSet.js";
 import {PageGame} from "./PageGame.js";
 import {PageTraining} from "./PageTraining.js";
 
+
 const animalsGameSet = new GameSet('assets/sets/animals-1/', [
   {name: 'biche.jpg', alt: 'biche'},
   {name: 'chat.jpg', alt: 'chat'},
@@ -45,11 +46,27 @@ export function initPagesContent() {
 
 }
 
+let trainingPage = null;
+let gamePage = null;
+
 export function initGameSet(gameSet) {
-  const trainingPage = new PageTraining('learn', '#learn > .grid-container', gameSet);
+  // If trainingPage and gamePage exist, remove their grid elements from the DOM
+  if (trainingPage) {
+    trainingPage.grid.grid.remove();
+    trainingPage = null;
+  }
+  if (gamePage) {
+    gamePage.grid.grid.remove();
+    gamePage.remove();
+    gamePage = null;
+  }
+
+  // Create new instances of PageTraining and PageGame
+  trainingPage = new PageTraining('learn', '#learn > .grid-container', gameSet);
   trainingPage.init();
 
-  const gamePage = new PageGame('game', '#game > .grid-container', gameSet);
+  gamePage = new PageGame('game', '#game > .grid-container', gameSet);
   gamePage.init();
 }
+
 
