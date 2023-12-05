@@ -39,4 +39,14 @@ export class Grid {
     fillCells(gameSet) {
       throw new NotImplementedError();
     }
+
+    updateCells(gameSet) {
+        let i = 0;
+        for (const cell of this.cells) {
+            cell.setCellPicture(gameSet.path + gameSet.imageList[i].name, gameSet.imageList[i].alt ?? "");
+            // cell.setCellOralMessage(gameSet.imageList[i].alt ?? "");
+            // cell.setCellCaption(gameSet.imageList[i].alt ?? "")
+            i++;
+        }
+    }
 }
