@@ -28,6 +28,10 @@ main > div {
     height: auto;
 }
 
+a{
+    display: block;
+}
+
 /*.cell figcaption {*/
 /*    display: none;*/
 /*    position: absolute;*/
