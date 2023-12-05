@@ -17,15 +17,17 @@ export class GridGame extends Grid {
     this.isSpeaking = false;
 
     // Écouter l'événement personnalisé
-    window.addEventListener('speechEnded', () => {
+    this.checkSpeaking = () => {
       this.isSpeaking = window.speechSynthesis.speaking;
-    });
+      this.setCellsCursor(this.isSpeaking ? 'auto' : 'pointer');
+    }
+
+    window.addEventListener('speechStarted', this.checkSpeaking);
+    window.addEventListener('speechEnded', this.checkSpeaking);
   }
 
   saySelectedPictureName() {
-    this.isSpeaking = true;
     this.speechSynthesis.speak(this.selectedPictureName);
-    this.isSpeaking = window.speechSynthesis.speaking;
   }
 
 
@@ -79,8 +81,6 @@ export class GridGame extends Grid {
     this.score = 0;
     this.total = this.gameSet.imageList.length;
     this.pictureNames = this.gameSet.imageList.map(image => image.alt);
-    this.score = 0;
-    this.total = this.gameSet.imageList.length;
     this.speechSynthesis.speak('Cliquez sur les images correspondantes');
     this.selectedPictureName = this.getRandomPictureName();
   }
@@ -89,6 +89,7 @@ export class GridGame extends Grid {
     this.setCellsCursor('auto');
     document.querySelector('.score').textContent = this.score;
     document.querySelector('.total').textContent = this.total;
+    this.setCellsCursor('auto');
     showAppPage("result")
   }
 }

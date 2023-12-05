@@ -20,7 +20,8 @@ export class SpeechSynthesis {
    * @param voiceName
    */
   speak(text, volume = 1, rate = 1, pitch = 1, voiceName) {
-    // Create a new instance of SpeechSynthesisUtterance.
+    const speechStarted = new Event('speechStarted');
+    window.dispatchEvent(speechStarted);
 
     // Set the text.
     this.msg.text = text;
@@ -40,7 +41,6 @@ export class SpeechSynthesis {
       // Custom event to notify that the speech has ended.
       const speechEndedEvent = new Event('speechEnded');
       window.dispatchEvent(speechEndedEvent);
-      console.log('Finished in ' + event.elapsedTime + ' seconds.')
     }
 
     // Queue this utterance.
