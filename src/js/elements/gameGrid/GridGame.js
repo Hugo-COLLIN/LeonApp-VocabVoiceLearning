@@ -13,13 +13,11 @@ export class GridGame extends Grid {
 
     this.score = 0;
     this.total = gameSet.imageList.length;
-
-    this.isSpeaking = false;
+    this.firstCorrectAnswer = true;
 
     // Écouter l'événement personnalisé
     this.checkSpeaking = () => {
-      this.isSpeaking = window.speechSynthesis.speaking;
-      this.setCellsCursor(this.isSpeaking ? 'auto' : 'pointer');
+      this.setCellsCursor(window.speechSynthesis.speaking ? 'auto' : 'pointer');
     }
 
     window.addEventListener('speechStarted', this.checkSpeaking);
@@ -47,6 +45,7 @@ export class GridGame extends Grid {
   }
 
   getRandomPictureName() {
+    this.firstCorrectAnswer = true;
     let pictureName = this.pictureNames[Math.floor(Math.random() * this.pictureNames.length)];
     if(this.pictureNames.length > 0) {
       this.pictureNames.splice(this.pictureNames.indexOf(pictureName), 1);
@@ -67,10 +66,11 @@ export class GridGame extends Grid {
 
     if (pictureName === this.selectedPictureName) {
       this.speechSynthesis.speak('Bonne réponse');
-      this.score++;
+      if (this.firstCorrectAnswer) this.score++;
       this.selectedPictureName = this.getRandomPictureName();
     }
     else {
+      this.firstCorrectAnswer = false;
       this.speechSynthesis.speak('Mauvaise réponse');
       this.speechSynthesis.speak(this.selectedPictureName);
     }
