@@ -6,7 +6,7 @@ export class GameSet {
 }
 
 export function getAnimalGameSet() {
-    return new GameSet('assets/grids/animals-1/', [
+    return new GameSet('assets/sets/animals-1/', [
         {name: 'biche.jpg', alt: 'biche'},
         {name: 'chat.jpg', alt: 'chat'},
         {name: 'cochon.jpg', alt: 'cochon'},
@@ -20,7 +20,7 @@ export function getAnimalGameSet() {
 }
 
 export function getFruitGameSet() {
-    return new GameSet('assets/grids/fruits-1/', [
+    return new GameSet('assets/sets/fruits-1/', [
         {name: 'ananas.jpg', alt: 'ananas'},
         {name: 'banane.jpg', alt: 'banane'},
         {name: 'figue.jpg', alt: 'figue'},
