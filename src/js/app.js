@@ -1,5 +1,5 @@
 import {initRouter} from "./application/router/router.js";
-import {initPagesContent} from "./pages/pages.js";
+import {initPagesContent} from "./pages/intiPages.js";
 
 
 initRouter();
