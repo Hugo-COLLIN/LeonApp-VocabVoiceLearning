@@ -1,18 +1,11 @@
 import {appendGrid} from "./training.js";
 import {initGameGrid} from "./game.js";
-import {GameSet} from "../elements/GameSet.js";
+import {getAnimalGameSet, getFruitGameSet} from "../elements/GameSet.js";
 
-const gameSet = new GameSet('assets/grids/animals-1/', [
-  {name: 'biche.jpg', alt: 'biche'},
-  {name: 'chat.jpg', alt: 'chat'},
-  {name: 'cochon.jpg', alt: 'cochon'},
-  {name: 'girafe.jpg', alt: 'girafe'},
-  {name: 'lion.jpg', alt: 'lion'},
-  {name: 'panda.jpg', alt: 'panda'},
-  {name: 'chien.jpg', alt: 'chien'},
-  {name: 'chimpanze.jpg', alt: 'chimpanzé'},
-  {name: 'tortue.png', alt: 'tortue'},
-]);
+let gameSet = getAnimalGameSet();
+if (window.location.hash === '#fruits') {
+  gameSet = getFruitGameSet();
+}
 
 export function initPagesContent() {
   initTrainingPage();
