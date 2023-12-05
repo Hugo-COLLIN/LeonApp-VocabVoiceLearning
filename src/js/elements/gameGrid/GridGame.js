@@ -1,5 +1,6 @@
 import {Grid} from "./Grid.js";
 import {SpeechSynthesis} from "../SpeechSynthesis.js";
+import {showAppPage} from "../../application/router/managePages.js";
 
 const WIN_MESSAGE = 'Bravo, vous avez gagné !';
 
@@ -9,12 +10,6 @@ export class GridGame extends Grid {
     this.gameSet = gameSet;
     this.pictureNames = gameSet.imageList.map(image => image.alt);
     this.speechSynthesis = new SpeechSynthesis();
-  }
-
-  startGame() {
-    this.setCellsCursor('pointer');
-    this.pictureNames = this.gameSet.imageList.map(image => image.alt);
-    this.selectedPictureName = this.getRandomPictureName();
   }
 
   saySelectedPictureName() {
@@ -36,7 +31,6 @@ export class GridGame extends Grid {
     }
   }
 
-
   getRandomPictureName() {
     let pictureName = this.pictureNames[Math.floor(Math.random() * this.pictureNames.length)];
     if(this.pictureNames.length > 0) {
@@ -44,11 +38,12 @@ export class GridGame extends Grid {
     }
     else {
       pictureName = WIN_MESSAGE;
-      this.setCellsCursor('auto');
+      this.stopGame();
     }
     this.speechSynthesis.speak(pictureName);
     return pictureName;
   }
+
 
   comparePictureName(pictureName) {
     if (this.selectedPictureName === WIN_MESSAGE) {
@@ -63,5 +58,16 @@ export class GridGame extends Grid {
       this.speechSynthesis.speak('Mauvaise réponse');
       this.speechSynthesis.speak(this.selectedPictureName);
     }
+  }
+
+  startGame() {
+    this.setCellsCursor('pointer');
+    this.pictureNames = this.gameSet.imageList.map(image => image.alt);
+    this.selectedPictureName = this.getRandomPictureName();
+  }
+
+  stopGame() {
+    this.setCellsCursor('auto');
+    showAppPage("result")
   }
 }
