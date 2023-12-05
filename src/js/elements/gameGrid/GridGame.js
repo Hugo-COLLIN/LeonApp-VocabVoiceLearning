@@ -66,6 +66,8 @@ export class GridGame extends Grid {
 
   startGame() {
     this.setCellsCursor('pointer');
+    this.score = 0;
+    this.total = this.gameSet.imageList.length;
     this.pictureNames = this.gameSet.imageList.map(image => image.alt);
     this.selectedPictureName = this.getRandomPictureName();
   }
