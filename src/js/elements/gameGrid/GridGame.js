@@ -1,5 +1,4 @@
 import {Grid} from "./Grid.js";
-import {Cell} from './Cell.js';
 import {SpeechSynthesis} from "../SpeechSynthesis.js";
 
 const WIN_MESSAGE = 'Bravo, vous avez gagné !';
@@ -20,18 +19,6 @@ export class GridGame extends Grid {
 
   saySelectedPictureName() {
     this.speechSynthesis.speak(this.selectedPictureName);
-  }
-
-  initCells(size = 3) {
-    for (let i = 0; i < size * size; i++) {
-      const cell = new Cell();
-      this.grid.appendChild(cell.getCell());
-      this.cells.add(cell);
-    }
-
-    // Set the grid size
-    this.grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    this.grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   }
 
   fillCells(gameSet) {
