@@ -1,5 +1,5 @@
 import {NotImplementedError} from "../../application/errors/NotImplementedError.js";
-import {Cell} from "./Cell";
+import {Cell} from "./Cell.js";
 
 /**
  * An abstract class representing a grid
