@@ -22,4 +22,13 @@ export class GridLearning extends Grid {
       }
     }
 
+    updateCells(gameSet) {
+        super.updateCells(gameSet);
+        let i = 0;
+        for (const cell of this.cells) {
+            cell.setCellCaption(gameSet.imageList[i].alt ?? "")
+            i++;
+        }
+
+    }
 }
