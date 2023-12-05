@@ -1,6 +1,6 @@
 import { GameSet } from "../elements/GameSet.js";
 import { PageGame } from "./PageGame.js";
-import { PageTraining } from "./PageTraining.js";
+import { PageLearning } from "./PageLearning.js";
 
 const gameSet = new GameSet('assets/sets/animals-1/', [
   {name: 'biche.jpg', alt: 'biche'},
@@ -15,7 +15,7 @@ const gameSet = new GameSet('assets/sets/animals-1/', [
 ]);
 
 export function initPagesContent() {
-  const trainingPage = new PageTraining('learn', '#learn > .grid-container', gameSet);
+  const trainingPage = new PageLearning('learn', '#learn > .grid-container', gameSet);
   trainingPage.init();
 
   const gamePage = new PageGame('game', '#game > .grid-container', gameSet);
