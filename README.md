@@ -15,6 +15,8 @@
 - Jouer à un jeu pour tester ses connaissances
 - Réécouter la prononciation du mot en cliquant sur le bouton "Réécouter"
 - Affichage d'un message score à la fin du jeu
+- Contour des cartes en rouge si la réponse est fausse et en vert si la réponse est juste
+- Possibilité d'ajouter des cartes dans la série de vocabulaire avec des fichiers json dans le répertoire assets/data
 ## Structure du projet
 - Le répertoire assets contient les fichiers multimédias (images) utilisés dans le projet
 - Le répertoire css contient les fichiers CSS utilisés dans le projet
