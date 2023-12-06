@@ -2,16 +2,22 @@
   "name": "apprentissage_synthese_vocale",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
   "scripts": {
+    "start": "http-server src -a localhost -c-1 -o",
     "test": "npx jest"
   },
-  "author": "",
+  "authors": [
+    "Hugo COLLIN",
+    "Aimé LIM HOUN TCHEN"
+  ],
   "license": "UNLICENSED",
   "devDependencies": {
     "@babel/preset-env": "^7.23.5",
     "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "jsdom": "^23.0.1"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }
