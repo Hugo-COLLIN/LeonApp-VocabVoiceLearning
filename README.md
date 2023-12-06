@@ -6,7 +6,7 @@
 - Vérifier la bonne installation de `npm` avec la commande `npm -v`
 - Exécuter à la racine du projet la commande d'installation des dépendances `npm install`
 - Exécuter la commande `npm run start` pour lancer le serveur de développement
-- Ouvrir le fichier `index.html` dans un navigateur web
+- Ouvrir le navigateur à l'adresse http://localhost:8080
 ## Capture d'écran du jeu avec les cartes
 ![img.png](img.png)
 ## Fonctionnalités
