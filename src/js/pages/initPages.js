@@ -1,6 +1,6 @@
-import {GameSet} from "../elements/GameSet.js";
-import {PageGame} from "./PageGame.js";
-import {PageTraining} from "./PageTraining.js";
+import { GameSet } from "../elements/GameSet.js";
+import { PageGame } from "./PageGame.js";
+import { PageLearning } from "./PageLearning.js";
 
 
 const animalsGameSet = new GameSet('assets/sets/animals-1/', [
@@ -30,7 +30,6 @@ const fruitsGameSet = new GameSet('assets/sets/fruits-1/', [
 export function initPagesContent() {
   document.querySelectorAll('#set-selector').forEach((element) => {
     element.addEventListener('click', (event) => {
-      console.log(event.target.innerText);
       switch (event.target.innerText.toLowerCase()) {
         case 'animaux':
           initGameSet(animalsGameSet);
@@ -39,7 +38,7 @@ export function initPagesContent() {
           initGameSet(fruitsGameSet);
           break;
         default:
-          console.log('set not found');
+          console.error('set not found');
       }
     });
   });
@@ -62,7 +61,7 @@ export function initGameSet(gameSet) {
   }
 
   // Create new instances of PageTraining and PageGame
-  trainingPage = new PageTraining('learn', '#learn > .grid-container', gameSet);
+  trainingPage = new PageLearning('learn', '#learn > .grid-container', gameSet);
   trainingPage.init();
 
   gamePage = new PageGame('game', '#game > .grid-container', gameSet);

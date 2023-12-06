@@ -1,4 +1,4 @@
-import {SpeechSynthesis} from "../SpeechSynthesis.js";
+import {Speecher} from "../Speecher.js";
 
 /**
  * A class representing a picture
@@ -23,7 +23,7 @@ export class Picture {
      * Say the picture name
      */
     sayPictureName() {
-        new SpeechSynthesis().speak(this.pictureName);
+        new Speecher().speak(this.pictureName);
     }
 
     /**
