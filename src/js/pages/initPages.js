@@ -1,4 +1,4 @@
-import {GameSet, jsonToGameSet} from "../elements/GameSet.js";
+import {jsonToGameSet} from "../elements/GameSet.js";
 import { PageGame } from "./PageGame.js";
 import { PageLearning } from "./PageLearning.js";
 
