@@ -119,6 +119,26 @@ button:hover, .button:hover {
     text-align: right;
 }
 
-/*.play-button {*/
-/*    cursor: pointer;*/
-/*}*/
+/* Blink-grid */
+.cell-correct {
+    animation: correct-blink 2s ease-in-out;
+}
+
+.cell-incorrect {
+    animation: incorrect-blink 1.3s ease-in-out infinite;
+}
+
+@keyframes incorrect-blink {
+    0% { background-color: red; }
+    50% { background-color: #ccc; }
+    100% { background-color: red; }
+}
+
+@keyframes correct-blink {
+    0% { background-color: #ccc; }
+    25% { background-color: #36e136; }
+    75% { background-color: #36e136; }
+    100% { background-color: #ccc; }
+
+}
+
