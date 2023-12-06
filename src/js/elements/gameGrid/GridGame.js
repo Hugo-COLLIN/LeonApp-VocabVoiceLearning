@@ -33,7 +33,7 @@ export class GridGame extends Grid {
     let i = 0;
     for (const cell of this.cells) {
       cell.initCellPicture(gameSet.path + gameSet.imageList[i].name, gameSet.imageList[i].alt ?? "");
-      cell.getCell().addEventListener('click', this.comparePictureName.bind(this, gameSet.imageList[i].alt));
+      cell.getCell().addEventListener('click', this.comparePictureName.bind(this, gameSet.imageList[i].alt, cell.getCell()));
       i++;
     }
   }
@@ -59,22 +59,28 @@ export class GridGame extends Grid {
   }
 
 
-  comparePictureName(pictureName) {
+  comparePictureName(pictureName, cellElement) {
     if (window.speechSynthesis.speaking || this.selectedPictureName === WIN_MESSAGE) {
       return;
     }
 
     if (pictureName === this.selectedPictureName) {
       this.speechSynthesis.speak('Bonne réponse');
+      cellElement.classList.add('cell-correct');
+      setTimeout(() => cellElement.classList.remove('cell-correct'), 2000);
       if (this.firstCorrectAnswer) this.score++;
       this.selectedPictureName = this.getRandomPictureName();
     }
     else {
       this.firstCorrectAnswer = false;
       this.speechSynthesis.speak('Mauvaise réponse');
+      cellElement.classList.add('cell-incorrect');
+      setTimeout(() => cellElement.classList.remove('cell-incorrect'), 2000);
       this.speechSynthesis.speak(this.selectedPictureName);
     }
   }
+
+
 
   startGame() {
     this.setCellsCursor('pointer');
