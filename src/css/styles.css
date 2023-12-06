@@ -136,8 +136,8 @@ button:hover, .button:hover {
 
 @keyframes correct-blink {
     0% { background-color: #ccc; }
-    25% { background-color: green; }
-    75% { background-color: green; }
+    25% { background-color: #48f848; }
+    75% { background-color: #48f848; }
     100% { background-color: #ccc; }
 
 }
