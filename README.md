@@ -5,8 +5,7 @@
 - Installer `npm` https://nodejs.org/en
 - Vérifier la bonne installation de `npm` avec la commande `npm -v`
 - Exécuter à la racine du projet la commande d'installation des dépendances `npm install`
-- Exécuter la commande `npm run start` pour lancer le serveur de développement
-- Ouvrir le navigateur à l'adresse http://localhost:8080
+- Exécuter la commande `npm run start` pour lancer le serveur de développement et ouvrir le projet dans le navigateur
 ## Capture d'écran du jeu avec les cartes
 ![img.png](img.png)
 ## Fonctionnalités
