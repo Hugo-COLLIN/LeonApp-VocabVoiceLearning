@@ -1,36 +1,41 @@
 # Projet multimédia (Leon App)
-- COLLIN Hugo
-- LIM HOUN TCHEN Aimé
+- Hugo COLLIN
+- Aimé LIM HOUN TCHEN
+
 ## Lancer le projet
-- Installer `npm` https://nodejs.org/en
-- Vérifier la bonne installation de `npm` avec la commande `npm -v`
-- Exécuter à la racine du projet la commande d'installation des dépendances `npm install`
-- Exécuter la commande `npm run start` pour lancer le serveur de développement et ouvrir le projet dans le navigateur
+- Installer `npm` (https://nodejs.org/) puis vérifier sa bonne installation avec la commande `npm -v`.
+- Exécuter à la racine du projet la commande `npm install` pour installer ses dépendances.
+- Exécuter la commande `npm run start` pour lancer le serveur de développement et ouvrir le projet dans le navigateur.
+
 ## Capture d'écran du jeu avec les cartes
 ![img.png](img.png)
+
 ## Fonctionnalités
-- Choix de la série de vocabulaire
+- Choisir parmi plusieurs séries de vocabulaire
 - Ecouter la prononciation du mot correspondant à l'image
-- Jouer à un jeu pour tester ses connaissances
+- Jouer à un jeu avec la série de vocabulaire choisie
 - Réécouter la prononciation du mot en cliquant sur le bouton "Réécouter"
-- Affichage d'un message score à la fin du jeu
-- Contour des cartes en rouge si la réponse est fausse et en vert si la réponse est juste
-- Possibilité d'ajouter des cartes dans la série de vocabulaire avec des fichiers json dans le répertoire assets/data
+- Afficher un message et le score à la fin du jeu
+- Afficher un signal visuel (changement de couleur des cases) et lancer un message audio lors de l'interaction avec la grille de jeu
+
 ## Structure du projet
-- Le répertoire assets contient les fichiers multimédias (images) utilisés dans le projet
-- Le répertoire css contient les fichiers CSS utilisés dans le projet
-- Le répertoire js contient les fichiers JavaScript utilisés dans le projet
-### Structure du projet
-#### Structure de données
-<p>La classe Picture est chargée de créer les images avec l'emplacement et le nom de l'image</p>
-<p>La classe Cell représente une image sur laquelle l'utilisateur peut cliquer</p>
-<p>La classe Grid représente la grille d'image avec une liste d'objets Cell</p>
-<p>La classe GridGame et GridLearning sont des classes héritant de Grid et correspondant à la grille d'entraînement et celle de jeu</p>
 
-#### Structure de l'interface
-<p>La classe Page correspondant aux différentes pages que l'utilisateur peut voir</p>
-<p>La classe PageGame et PageLearning héritent de Page et représentent les pages dédiées à l'apprentissage et au jeu</p>
-<p>Il existe un seul document html dont les pages sont en display:none et affichées en fonction du nom du hash dans l'url du navigateur
+### Structure des fichiers
+- Le répertoire assets contient les fichiers multimédias (images) utilisés dans le projet.
+- Le répertoire css contient les fichiers CSS utilisés dans le projet.
+- Le répertoire js contient les fichiers JavaScript utilisés dans le projet.
 
-#### Evénements
-<p>Au chargement de index.html, app.js est chargée d'initialiser les différentes pages et le routage qui permet à l'utilisateur de naviguer sur les différentes parties de l'application lorsqu'il clique sur un lien</p>
+### Structure de l'application
+- L'application est une SPA (Single Page Application). Un seul fichier ``index.html`` contient toutes les pages de l'application, mais seule la page active s'affiche. On détermine la page active en fonction du hash dans l'url du navigateur (`url#page`).
+
+### Structure de l'interface
+- La classe Page est liée à une page que l'utilisateur peut voir.
+- La classe PageGame et PageLearning héritent de Page et représentent respectivement les pages apprentissage et jeu.
+
+### Structure de données
+- La classe Grid représente une grille d'images.
+- Les classes GridLearning et GridGame sont des classes héritant de Grid et correspondant respectivement aux grilles d'apprentissage et de jeu. En particulier, GridGame gère également la logique du jeu.
+- La classe Cell représente une cellule de grille sur laquelle l'utilisateur peut cliquer.
+- La classe Picture est chargée de créer l'image d'une cellule d'après l'emplacement et le nom de l'image.
+
+
