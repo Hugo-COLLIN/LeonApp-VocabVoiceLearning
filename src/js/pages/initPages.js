@@ -1,10 +1,10 @@
-import {jsonToGameSet} from "../elements/GameSet.js";
+import {GameSet} from "../elements/GameSet.js";
 import { PageGame } from "./PageGame.js";
 import { PageLearning } from "./PageLearning.js";
 
-const animalsGameSet = jsonToGameSet('assets/data/animals-1-data.json');
+const animalsGameSet = new GameSet('assets/data/animals-1-data.json');
 
-const fruitsGameSet = jsonToGameSet('assets/data/fruits-1-data.json');
+const fruitsGameSet = new GameSet('assets/data/fruits-1-data.json');
 
 export function initPagesContent() {
   document.querySelectorAll('#set-selector').forEach((element) => {
