@@ -52,7 +52,7 @@ export class GridGame extends Grid {
     }
     else {
       pictureName = WIN_MESSAGE;
-      this.stopGame();
+      setTimeout(() => this.stopGame(), 2000);
     }
     this.speechSynthesis.speak(pictureName);
     return pictureName;
