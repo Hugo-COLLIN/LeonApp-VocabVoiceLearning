@@ -1,0 +1,41 @@
+{
+  "path": "assets/sets/fruits-1/",
+  "imageList": [
+    {
+      "name": "ananas.jpg",
+      "alt": "ananas"
+    },
+    {
+      "name": "banane.jpg",
+      "alt": "banane"
+    },
+    {
+      "name": "figue.jpg",
+      "alt": "figue"
+    },
+    {
+      "name": "fraise.jpg",
+      "alt": "fraise"
+    },
+    {
+      "name": "kiwi.jpg",
+      "alt": "kiwi"
+    },
+    {
+      "name": "orange.jpg",
+      "alt": "orange"
+    },
+    {
+      "name": "poire.jpg",
+      "alt": "poire"
+    },
+    {
+      "name": "pomme.jpg",
+      "alt": "pomme"
+    },
+    {
+      "name": "raisin.jpg",
+      "alt": "raisin"
+    }
+  ]
+}

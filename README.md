@@ -11,12 +11,13 @@
 ![img.png](img.png)
 
 ## Fonctionnalités
-- Choisir parmi plusieurs séries de vocabulaire
-- Ecouter la prononciation du mot correspondant à l'image
-- Jouer à un jeu avec la série de vocabulaire choisie
-- Réécouter la prononciation du mot en cliquant sur le bouton "Réécouter"
-- Afficher un message et le score à la fin du jeu
-- Afficher un signal visuel (changement de couleur des cases) et lancer un message audio lors de l'interaction avec la grille de jeu
+- Choisir parmi plusieurs séries de vocabulaire.
+- Ecouter la prononciation du mot correspondant à l'image.
+- Jouer à un jeu avec la série de vocabulaire choisie.
+- Réécouter la prononciation du mot en cliquant sur le bouton "Réécouter".
+- Afficher un message et le score à la fin du jeu.
+- Afficher un signal visuel (changement de couleur des cases) et lancer un message audio lors de l'interaction avec la grille de jeu.
+- Attendre 2 secondes à la fin du jeu avant d'afficher la page de résultat du jeu.
 
 ## Structure du projet
 

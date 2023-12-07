@@ -1,0 +1,41 @@
+{
+  "path": "assets/sets/animals-1/",
+  "imageList": [
+    {
+      "name": "biche.jpg",
+      "alt": "biche"
+    },
+    {
+      "name": "chat.jpg",
+      "alt": "chat"
+    },
+    {
+      "name": "cochon.jpg",
+      "alt": "cochon"
+    },
+    {
+      "name": "girafe.jpg",
+      "alt": "girafe"
+    },
+    {
+      "name": "lion.jpg",
+      "alt": "lion"
+    },
+    {
+      "name": "panda.jpg",
+      "alt": "panda"
+    },
+    {
+      "name": "chien.jpg",
+      "alt": "chien"
+    },
+    {
+      "name": "chimpanze.jpg",
+      "alt": "chimpanzé"
+    },
+    {
+      "name": "tortue.png",
+      "alt": "tortue"
+    }
+  ]
+}
